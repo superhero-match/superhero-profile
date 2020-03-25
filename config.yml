@@ -1,0 +1,22 @@
+app:
+  port: ':4400'
+  cert_file: './cmd/api/certificate.pem'
+  key_file: './cmd/api/key.pem'
+  time_format: '2019-09-15T14:04:05'
+
+es:
+  host: '192.168.0.105'
+  port: '9200'
+  cluster: 'superheromatch'
+  index: 'superhero'
+  batch_size: 50
+
+cache:
+  address: '192.168.0.105'
+  port: ':6379'
+  password: 'Awesome85**'
+  db: 0
+  pool_size: 25
+  minimum_idle_connections: 10
+  maximum_retries: 1
+  suggestion_key_format: 'suggestion.%s'
