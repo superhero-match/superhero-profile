@@ -25,6 +25,10 @@ func (srv *Service) GetCachedSuggestion(key string) (*model.Superhero, error) {
 		return nil, err
 	}
 
+	if cachedSuggestion == nil {
+		return nil, nil
+	}
+
 	result := mapper.MapCacheSuggestionToResult(*cachedSuggestion)
 
 	return &result, nil

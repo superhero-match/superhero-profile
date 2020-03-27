@@ -52,6 +52,10 @@ func (ctl *Controller) Profile(c *gin.Context) {
 		return
 	}
 
+	fmt.Println("GetCachedSuggestion:")
+	fmt.Printf("%+v", superhero)
+	fmt.Println("")
+
 	if superhero != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"status":  http.StatusOK,
@@ -71,6 +75,10 @@ func (ctl *Controller) Profile(c *gin.Context) {
 
 		return
 	}
+
+	fmt.Println("GetESSuggestion:")
+	fmt.Printf("%+v", superhero)
+	fmt.Println("")
 
 	c.JSON(http.StatusOK, gin.H{
 		"status":     http.StatusOK,

@@ -16,6 +16,6 @@ package model
 // ProfilePicture holds data related to profile picture of a Superhero.
 type ProfilePicture struct {
 	SuperheroID       string `json:"superhero_id"`
-	ProfilePictureURL string `json:"profile_pic_url"`
+	ProfilePictureURL string `json:"url"`
 	Position          int    `json:"position"`
 }
