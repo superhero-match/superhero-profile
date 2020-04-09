@@ -13,10 +13,9 @@
 */
 package config
 
-// App holds the configuration values for the application.
-type App struct {
-	Port       string `env:"APP_PORT" default:":4400"`
-	CertFile   string `env:"APP_CERT_FILE" default:"./cmd/api/certificate.pem"`
-	KeyFile    string `env:"APP_KEY_FILE" default:"./cmd/api/key.pem"`
-	TimeFormat string `env:"APP_TIME_FORMAT" default:"2006-01-02T15:04:05"`
+// Health holds configuration for health server.
+type Health struct {
+	Port             string `env:"HEALTH_SERVER_PORT" default:":8210"`
+	ShutdownEndpoint string `env:"HEALTH_SERVER_SHUTDOWN_ENDPOINT" default:"/api/v1/superhero_profile_health/shutdown"`
+	ContentType      string `env:"HEALTH_SERVER_CONTENT_TYPE" default:"application/json"`
 }

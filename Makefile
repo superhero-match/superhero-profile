@@ -1,11 +1,5 @@
 prepare:
-	go get -u github.com/golang/dep/cmd/dep
-	go get -u github.com/gin-gonic/gin
-	go get -u golang.org/x/sys/unix
-	go get -u github.com/jinzhu/configor
-	go get -u go.uber.org/zap
-	go get -u gopkg.in/olivere/elastic.v7
-	go get -u github.com/go-redis/redis/v7
+	go mod download
 
 run:
 	go build -o bin/main cmd/api/main.go
@@ -15,19 +9,16 @@ build:
 	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o bin/main cmd/api/main.go
 	chmod +x bin/main
 
-deps:
-	dep ensure -v
-
 dkb:
-	docker build -t superhero-suggestions .
+	docker build -t superhero-profile .
 
 dkr:
-	docker run --rm -p "4000:4000" superhero-suggestions
+	docker run --rm -p "4400:4400" -p "8210:8210" superhero-profile
 
 launch: dkb dkr
 
 api-log:
-	docker logs superhero-suggestions -f
+	docker logs superhero-profile -f
 
 es-log:
 	docker logs es -f
@@ -41,7 +32,7 @@ rmi:
 clear: rmc rmi
 
 api-ssh:
-	docker exec -it superhero-suggestions /bin/bash
+	docker exec -it superhero-profile /bin/bash
 
 es-ssh:
 	docker exec -it es /bin/bash
