@@ -91,7 +91,7 @@ func checkProfileRequestError(err error, c *gin.Context) bool {
 		var suggestion ctrl.Superhero
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":     http.StatusInternalServerError,
-			"suggestion": suggestion,
+			"profile": suggestion,
 		})
 
 		return true
