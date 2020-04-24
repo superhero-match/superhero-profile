@@ -3,17 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4528d8b6-0967-40ab-9784-17368bfab6bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/controller/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/controller/profile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/service/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/service/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/service/es.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/service/es.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="superhero-profile" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,7 +51,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/superhero-profile/cmd/health">
+  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/superhero-profile/cmd/api">
     <configuration name="go build github.com/superhero-match/superhero-profile/cmd/api" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="superhero-profile" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -72,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/superhero-match/superhero-profile/cmd/health" />
         <item itemvalue="Go Build.go build github.com/superhero-match/superhero-profile/cmd/api" />
+        <item itemvalue="Go Build.go build github.com/superhero-match/superhero-profile/cmd/health" />
       </list>
     </recent_temporary>
   </component>
@@ -85,21 +85,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#Go_Modules_(vgo)/0.0.1366.728@0.0.1366.728" timestamp="1585144841750" />
-    <state width="1323" height="332" key="GridCell.Tab.0.bottom" timestamp="1586427866223">
+    <state width="1323" height="332" key="GridCell.Tab.0.bottom" timestamp="1587726000530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="332" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586427866223" />
-    <state width="1323" height="332" key="GridCell.Tab.0.center" timestamp="1586427866223">
+    <state width="1323" height="332" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587726000530" />
+    <state width="1323" height="332" key="GridCell.Tab.0.center" timestamp="1587726000528">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="332" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586427866223" />
-    <state width="1323" height="332" key="GridCell.Tab.0.left" timestamp="1586427866222">
+    <state width="1323" height="332" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587726000528" />
+    <state width="1323" height="332" key="GridCell.Tab.0.left" timestamp="1587726000527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="332" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586427866222" />
-    <state width="1323" height="332" key="GridCell.Tab.0.right" timestamp="1586427866223">
+    <state width="1323" height="332" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587726000527" />
+    <state width="1323" height="332" key="GridCell.Tab.0.right" timestamp="1587726000530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="332" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586427866223" />
+    <state width="1323" height="332" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587726000530" />
   </component>
 </project>

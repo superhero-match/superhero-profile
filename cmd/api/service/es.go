@@ -15,6 +15,7 @@ package service
 
 import (
 	ctrl "github.com/superhero-match/superhero-profile/cmd/api/model"
+	"sort"
 )
 
 // GetESSuggestion fetches suggestions from Elasticsearch.
@@ -46,6 +47,12 @@ func (srv *Service) GetESSuggestion(superheroID string) (*ctrl.Superhero, error)
 			SuperheroID:       profilePicture.SuperheroID,
 			ProfilePictureURL: profilePicture.ProfilePictureURL,
 			Position:          profilePicture.Position,
+		})
+	}
+
+	if len(superhero.ProfilePictures) > 0 {
+		sort.Slice(superhero.ProfilePictures, func(i, j int) bool {
+			return superhero.ProfilePictures[i].Position < superhero.ProfilePictures[j].Position
 		})
 	}
 

@@ -16,6 +16,7 @@ package service
 import (
 	"github.com/superhero-match/superhero-profile/cmd/api/model"
 	"github.com/superhero-match/superhero-profile/cmd/api/service/mapper"
+	"sort"
 )
 
 // GetCachedSuggestion fetches suggestion from cache and maps it into result.
@@ -31,7 +32,11 @@ func (srv *Service) GetCachedSuggestion(key string) (*model.Superhero, error) {
 
 	result := mapper.MapCacheSuggestionToResult(*cachedSuggestion)
 
+	if len(result.ProfilePictures) > 0 {
+		sort.Slice(result.ProfilePictures, func(i, j int) bool {
+			return result.ProfilePictures[i].Position < result.ProfilePictures[j].Position
+		})
+	}
+
 	return &result, nil
 }
-
-
