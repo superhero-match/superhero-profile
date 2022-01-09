@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2021 MWSOFT
+  Copyright (C) 2019 - 2022 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -14,13 +14,14 @@
 package service
 
 import (
+	"sort"
+
 	"github.com/superhero-match/superhero-profile/cmd/api/model"
 	"github.com/superhero-match/superhero-profile/cmd/api/service/mapper"
-	"sort"
 )
 
 // GetCachedSuggestion fetches suggestion from cache and maps it into result.
-func (srv *Service) GetCachedSuggestion(key string) (*model.Superhero, error) {
+func (srv *service) GetCachedSuggestion(key string) (*model.Superhero, error) {
 	cachedSuggestion, err := srv.Cache.GetSuggestion(key)
 	if err != nil {
 		return nil, err

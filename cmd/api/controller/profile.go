@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2021 MWSOFT
+  Copyright (C) 2019 - 2022 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -30,23 +30,23 @@ func (ctl *Controller) Profile(c *gin.Context) {
 
 	err := c.BindJSON(&req)
 	if checkProfileRequestError(err, c) {
-		ctl.Service.Logger.Error(
+		ctl.Logger.Error(
 			"failed to bind JSON to value of type ProfileRequest",
 			zap.String("err", err.Error()),
-			zap.String("time", time.Now().UTC().Format(ctl.Service.TimeFormat)),
+			zap.String("time", time.Now().UTC().Format(ctl.TimeFormat)),
 		)
 
 		return
 	}
 
 	superhero, err := ctl.Service.GetCachedSuggestion(
-		fmt.Sprintf(ctl.Service.Cache.SuggestionKeyFormat, req.SuperheroID),
+		fmt.Sprintf(ctl.SuggestionKeyFormat, req.SuperheroID),
 	)
 	if checkProfileRequestError(err, c) {
-		ctl.Service.Logger.Error(
+		ctl.Logger.Error(
 			"failed to fetch superhero profile from cache",
 			zap.String("err", err.Error()),
-			zap.String("time", time.Now().UTC().Format(ctl.Service.TimeFormat)),
+			zap.String("time", time.Now().UTC().Format(ctl.TimeFormat)),
 		)
 
 		return
@@ -67,10 +67,10 @@ func (ctl *Controller) Profile(c *gin.Context) {
 
 	superhero, err = ctl.Service.GetESSuggestion(req.SuperheroID)
 	if checkProfileRequestError(err, c) {
-		ctl.Service.Logger.Error(
+		ctl.Logger.Error(
 			"failed to fetch superhero profile from ES",
 			zap.String("err", err.Error()),
-			zap.String("time", time.Now().UTC().Format(ctl.Service.TimeFormat)),
+			zap.String("time", time.Now().UTC().Format(ctl.TimeFormat)),
 		)
 
 		return
@@ -81,7 +81,7 @@ func (ctl *Controller) Profile(c *gin.Context) {
 	fmt.Println("")
 
 	c.JSON(http.StatusOK, gin.H{
-		"status":     http.StatusOK,
+		"status":  http.StatusOK,
 		"profile": superhero,
 	})
 }
@@ -90,7 +90,7 @@ func checkProfileRequestError(err error, c *gin.Context) bool {
 	if err != nil {
 		var suggestion ctrl.Superhero
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"status":     http.StatusInternalServerError,
+			"status":  http.StatusInternalServerError,
 			"profile": suggestion,
 		})
 

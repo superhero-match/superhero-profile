@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2021 MWSOFT
+  Copyright (C) 2019 - 2022 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -20,30 +20,30 @@ import (
 
 // MapESSuggestionToResult maps ES Superhero to result Superhero.
 func MapESSuggestionToResult(s es.Superhero) model.Superhero {
-		superhero := model.Superhero{
-			ID:                s.ID,
-			SuperheroName:     s.SuperheroName,
-			MainProfilePicURL: s.MainProfilePicURL,
-			ProfilePictures:   make([]model.ProfilePicture, 0),
-			Gender:            s.Gender,
-			Age:               s.Age,
-			Lat:               s.Location.Lat,
-			Lon:               s.Location.Lon,
-			Birthday:          s.Birthday,
-			Country:           s.Country,
-			City:              s.City,
-			SuperPower:        s.SuperPower,
-			AccountType:       s.AccountType,
-			CreatedAt:         s.CreatedAt,
-		}
+	superhero := model.Superhero{
+		ID:                s.ID,
+		SuperheroName:     s.SuperheroName,
+		MainProfilePicURL: s.MainProfilePicURL,
+		ProfilePictures:   make([]model.ProfilePicture, 0),
+		Gender:            s.Gender,
+		Age:               s.Age,
+		Lat:               s.Location.Lat,
+		Lon:               s.Location.Lon,
+		Birthday:          s.Birthday,
+		Country:           s.Country,
+		City:              s.City,
+		SuperPower:        s.SuperPower,
+		AccountType:       s.AccountType,
+		CreatedAt:         s.CreatedAt,
+	}
 
-		for _, profilePicture := range s.ProfilePictures {
-			superhero.ProfilePictures = append(superhero.ProfilePictures, model.ProfilePicture{
-				SuperheroID:       profilePicture.SuperheroID,
-				ProfilePictureURL: profilePicture.ProfilePictureURL,
-				Position:          profilePicture.Position,
-			})
-		}
+	for _, profilePicture := range s.ProfilePictures {
+		superhero.ProfilePictures = append(superhero.ProfilePictures, model.ProfilePicture{
+			SuperheroID:       profilePicture.SuperheroID,
+			ProfilePictureURL: profilePicture.ProfilePictureURL,
+			Position:          profilePicture.Position,
+		})
+	}
 
 	return superhero
 }
